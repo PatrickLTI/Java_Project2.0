@@ -13,7 +13,6 @@
     <!-- Link for icons -->
     <link rel="stylesheet" href="font-awesome/css/all.min.css" />
     <!-- Custom css -->
-    <link rel="stylesheet" href="styles/about_us.css" />
     <link rel="stylesheet" href="styles/main.css" rel="stylesheet" />
 
     <!-- Fonts -->
@@ -26,57 +25,94 @@
 </head>
 
 <body>
-    <header class="sticky-md-top pb-4" id="header">
-        <div style="height: 10vh;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 p-1">
-                        <a href="fr/index.html" class="icon float-end mx-2 ">Fr</a>
-                        <a href="address.html" target="_blank" class=" icon float-end mx-2 "><i
-                                class="fas fa-map-marked-alt fa-lg "></i></a>
-                        <a href="https://www.facebook.com/TissyBistro/" target="_blank"
-                            class="icon float-end mx-2"><i class="fab fa-facebook-square fa-lg"></i></a>
-                    </div>
-                </div>
+    <!-- Header -->
+    <header class="sticky-md-top pb-4" id="header" style="background-color:#ffcbd3ea">
+        <div>
+<!-- Top Banner -->
+            <div width="100%" style="top:0px; background-color:#371e17e4; height: 29px; overflow:hidden;">
+                <a href="address.html" target="_blank" 
+                    style="vertical-align: top; margin: 25px; color: #d9d4a6; text-decoration: none; overflow:hidden;
+                    padding-left:24.5%;">
+                    <i class="fas fa-map-marked-alt fa-lg" style="text-overflow:clip;"></i> 
+                    &nbsp;132 Avenue St Louis, Beaconsfield, QC
+                </a>
+                <a href="https://www.facebook.com/TissyBistro/" target="_blank" 
+                    style="vertical-align: top; margin: 25px; color: #d9d4a6; text-decoration: none; overflow:hidden;">
+                    <i class="fab fa-facebook-square fa-lg" style="overflow:hidden;"></i> 
+                    &nbsp;@TissyBistro 
+                 </a>  
+                 <a href="#header"
+                    style="vertical-align: top; margin: 25px; color: #d9d4a6; text-decoration: none; overflow:hidden;">
+                    <i class="fas fa-phone" style="overflow:hidden;"></i> 
+                    &nbsp;438-725-5512
+                 </a>   
+                 <a href="#header"
+                    style="vertical-align: top; margin: 25px; color: #d9d4a6; text-decoration: none; overflow:hidden;">
+                    <i class="fas fa-clock"></i>
+                    &nbsp;Opening Hours: 11:00 AM ~ 6:00 PM
+                 </a>   
             </div>
-            <div class="container">
+                <a href="fr/menu.html" 
+                    style="color: #d9d4a6; text-decoration: none; font-weight:bold; font-size: larger;
+                    position: absolute; right: 0%; top: 0%; margin-top: 0px; background-color: #371e17; padding-right:10px; padding-left: 10px;">
+                    Fran&#231;ais
+                </a>
+<!-- Logo and Page Selection -->
+            <div>
+<!-- Logo -->
+                <a class="navbar-brand" href="index.html"><img src="images/logoSmall.png" alt="Tissy's Bistro" height=115px 
+                style="position:absolute; margin-top:-2px; left:0%;"></a>
+                <div style="margin-left:38%; padding-top:30px;">
+<!-- Navigation (Page Selection)-->
                 <nav class="navbar navbar-expand-lg">
-                    <div class="container">
-                        <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="w-100"
-                                alt="logo"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse position-relative" id="navbarNavDropdown">
-                            <ul class="navbar-nav fs-4 fw-bold ">
-                                <li class="nav-item p-1">
-                                    <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-                                </li>
-                                <li class="nav-item p-1">
-                                    <a class="nav-link" href="menu.html">MENU</a>
-                                </li>
-                                <li class="nav-item p-1">
-                                    <a class="nav-link" href="reservation.html">RESERVATION</a>
-                                </li>
-
-                                <li class="nav-item p-1">
-                                    <a class="nav-link" href="about_us.html">ABOUT US</a>
-                                </li>
-                            </ul>
-                            <a class=" icon position-absolute end-0" href="checkout.html"><i
-                                    class="fas fa-shopping-cart fa-2x"></i></a>
-                        </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+                    style="margin-left:13%; border-color:#371e17e4">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse position-relative" id="navbarNavDropdown">
+                        <ul class="navbar-nav fs-4 fw-bold" style="width:55%; text-align:center; margin-left: -13px;" >
+                            <li class="nav-item" style = "font-size: 75%; padding: 5px; margin: 10px;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            background-color:rgba(255, 255, 255, 0.703); border-radius: 10px;">
+                                <a class="nav-link active" aria-current="page" href="index.html"
+                                style="color:#000000c2" onMouseOver="this.style.color='#888147'" onMouseOut="this.style.color='#000000c2'">HOME</a>
+                            </li>
+                            <li class="nav-item" style = "font-size: 75%; padding: 5px; margin: 10px;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            background-color:rgba(255, 255, 255, 0.703); border-radius: 10px;">
+                                <a class="nav-link" href="menu.html"
+                                style="color:#5d5d5dda" onMouseOver="this.style.color='#371e17e4'" onMouseOut="this.style.color='#5d5d5dda'">MENU</a>
+                            </li>
+                            <li class="nav-item" style = "font-size: 75%; padding: 5px; margin: 10px;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            background-color:rgba(255, 255, 255, 0.703); border-radius: 10px;">
+                                <a class="nav-link" href="reservation.html"
+                                style="color:#5d5d5dda" onMouseOver="this.style.color='#371e17e4'" onMouseOut="this.style.color='#5d5d5dda'">RESERVATION</a>
+                            </li>
+                            
+                            <li class="nav-item" style = "font-size: 75%; padding: 5px; margin: 10px;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            background-color:rgba(255, 255, 255, 0.703); border-radius: 10px;">
+                                <a class="nav-link" href="about_us.html"
+                                style="color:#5d5d5dda" onMouseOver="this.style.color='#371e17e4'" onMouseOut="this.style.color='#5d5d5dda'">ABOUT</a>
+                            </li>
+                        </ul>
                     </div>
-                </nav>
+                </nav>  
             </div>
+            
+<!-- Checkout Icon -->
+<a href="checkout.html"
+style="color: #371e17e4; background-color: rgba(255, 255, 255, 0.703); padding: 24px; border-radius: 10px;
+position: absolute; right: 30px; top:45px;">
+<i class="fas fa-shopping-cart fa-2x"></i>
+</a>             
+            </div>        
         </div>
 
-
-        <!-- back to top -->
-        <a href="#top" id="backlink" class=" icon"><i class="fas fa-angle-double-up fa-3x"></i></a>
-    </header>
+<!-- back to top -->
+        <a href="#top" id="backlink" class=" icon" style="color: #371e17e4;"><i class="fas fa-angle-double-up fa-3x"></i></a>    
+    </header>  
     <div data-v-54226dd4="" style="min-height: 700px;">
         <section data-v-54226dd4="" class="container">
             <div data-v-54226dd4="" class="row justify-content-center">
@@ -125,6 +161,7 @@
                         </li>
                     </ul>
                     <p data-v-54226dd4=""></p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale">How do we protect your information?</h5>
                     <p data-v-54226dd4="">
                         We implement a variety of security measures to maintain the safety
@@ -139,6 +176,7 @@
                         etc.) will be kept on file for more than 60 days in order to revisit
                         your information.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale">Do we use cookies?</h5>
                     <p data-v-54226dd4="">
                         Yes (Cookies are small files that a site or its service provider
@@ -150,6 +188,7 @@
                         about site traffic and site interaction so that we can offer better
                         site experiences and tools in the future.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale">
                         Do we disclose any information to outside parties?
                     </h5>
@@ -165,6 +204,7 @@
                         information may be provided to other parties for marketing,
                         advertising, or other uses.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale">Third party links</h5>
                     <p data-v-54226dd4="">
                         Occasionally, at our discretion, we may include or offer third party
@@ -174,12 +214,14 @@
                         linked sites. Nonetheless, we seek to protect the integrity of our
                         site and welcome any feedback about these sites.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale">Online Privacy Policy Only</h5>
                     <p data-v-54226dd4="">
                         This online privacy policy applies only to information collected
                         through our website and not to information collected offline. Your
                         Consent: By using our site, you consent to our privacy policy.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale">Changes to our Privacy Policy</h5>
                     <p data-v-54226dd4="">
                         If we decide to change our privacy policy, we will post those
