@@ -37,10 +37,17 @@ header #backlink {
   font-family: Pacifico;
 }
 
+#btnCheckOut{
+  position: fixed;
+  right: 100px;
+  bottom: 30px;
+}
+
 /* styles for menu */
 .card-footer input[type=number]::-webkit-inner-spin-button {
   opacity: 1;
 }
+
 
 /* styles for reservation */
 #reservation {
