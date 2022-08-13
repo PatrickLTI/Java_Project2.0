@@ -131,3 +131,9 @@ function verifyCheckout() {
 
 }
 
+
+//after submit checkout form, delete the order array and order total form local storage
+document.getElementById('checkout').addEventListener('submit', ()=>{
+    localStorage.removeItem('orderArrayJSON');
+    localStorage.removeItem('totalOrdered');
+})
