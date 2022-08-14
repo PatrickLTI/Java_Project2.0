@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order details</title>
+    <link rel="icon" type="image/png" href="images/logo.png"/>
+    <!-- link for icon -->
+    <link rel="stylesheet"   href="font-awesome/css/all.min.css"/>
+    <!-- link for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
+    <!-- link for css compiled by scss -->
+    <link rel="stylesheet" href="styles/main.css" rel="stylesheet"/>
+
+
+    <script src="scripts/orderDetails.js"></script>
+
+
+</head>
+
+<body onload="showOrder()">
+    <header class="sticky-md-top pb-4" id="header">
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 p-1" >
+                        <a href="fr/menu.html" class="icon float-end mx-2 " >Fr</a>
+                        <a href="address.html" target="_blank" class=" icon float-end mx-2 "><i class="fas fa-map-marked-alt fa-lg "></i></a>
+                        <a href="https://www.facebook.com/TissyBistro/" target="_blank" class="icon float-end mx-2"><i class="fab fa-facebook-square fa-lg" ></i></a>              
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="w-100" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse position-relative" id="navbarNavDropdown">
+                        <ul class="navbar-nav fs-4 fw-bold ">
+                            <li class="nav-item p-1">
+                                <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                            </li>
+                            <li class="nav-item p-1">
+                                <a class="nav-link" href="menu.html">MENU</a>
+                            </li>
+                            <li class="nav-item p-1">
+                                <a class="nav-link" href="reservation.html">RESERVATION</a>
+                            </li>
+                            
+                            <li class="nav-item p-1">
+                                <a class="nav-link" href="about_us.html">ABOUT US</a>
+                            </li>
+                        </ul>
+                         <a class=" icon position-absolute end-0" href="checkout.html"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                    </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+           
+    </header> 
+
+    <main>
+        <!-- top image with restaurant name -->
+        <div class="container position-relative rounded shadow" id="header_image">
+            <div id="div-title" class="position-absolute top-50 start-50 translate-middle bg-light bg-opacity-75 p-3 rounded-4 shadow text-center">
+                <h1 class="fs-1" >Tissy's Bistro</h1>
+            </div>
+        </div>
+
+        <div class="container py-5">
+            <table class="container" id="ordersTable">
+            </table>
+
+            <div class="text-center mt-5">
+                <a href="menu.html"><i class="fas fa-angle-double-left fa-lg"></i></a>
+                &nbsp&nbsp&nbsp&nbsp
+                <a href="checkout.html"><i class="fas fa-angle-double-right fa-lg"></i></a>
+            </div>
+            
+            
+        </div>
+
+
+
+
+    </main>
+
+    <footer class="pb-3 mb-3">
+        <div class="conteiner ">
+            <ul class="nav justify-content-center p-2 bg-dark mb-2">
+                <li class="nav-item">
+                  <a class="nav-link fs-5 text-white mx-5" href="terms_conditions.html">-Terms & Conditions-</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 text-white mx-5" href="privacy.html">-Privacy Policy-</a>
+                </li>
+            </ul>
+            <div class="text-white p-2 bg-dark">
+                <p class="text-center fs-3">WELCOME !!!</p>
+                <p class="text-center"><i class="fas fa-location-arrow"></i> 132 Avenue SaintLouis, Beaconsfild, Quebec</p>
+                <p class="text-center"><i class="fas fa-clock"></i> Opening Hours:11:00 AM ~ 6:00 PM</p>
+                <p class="text-center"><i class="fas fa-phone"></i> 438-725-5512</p>
+                <p class="text-center"><i class="fas fa-envelope-open-text"></i> tissybistro2020@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

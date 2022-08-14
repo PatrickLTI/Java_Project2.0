@@ -18,9 +18,10 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
     <!-- link for css compiled by scss -->
     <link rel="stylesheet" href="styles/main.css" rel="stylesheet"/>
+    <script src="scripts/menu.js" defer></script>
 </head>
 
-<body>
+<body onload="startup()">
     <header class="sticky-md-top pb-4" id="header">
         <div>
             <div class="container">
@@ -55,7 +56,8 @@
                                 <a class="nav-link" href="about_us.html">ABOUT US</a>
                             </li>
                         </ul>
-                         <a class=" icon position-absolute end-0" href="checkout.html"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                        <!-- shopping cart icon linkd to order detail page -->
+                         <a class=" icon position-absolute end-0" href="orderDetails.html"><i class="fas fa-shopping-cart fa-2x" onclick="CalTotalOrdered()"></i></a>
                     </div>
                     </div>
                 </nav>
@@ -103,7 +105,8 @@
                 </ul>
               </div>
             </div>
-          </nav>
+        </nav>
+
 
         <!-- menu for APPERIZERS -->
         <div class="container mb-3 py-3 border-bottom" id="appetizers">
@@ -115,21 +118,19 @@
                         <div class="card-body">
                             <h5 class="card-title">Thai Spring Roll</h5>
                             <p class="card-text">Chicken and shrimp stir fried with mushroom , carrot, glass noodle, and onion. Seasoned with homemade Thai sauce.</p>
-                            <p>$10.50</p>
+                            <p class = "price">$10.50</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
                                 <form action="post" class="row mt-1 align-items-center">
                                     <div class="col-3   py-2">
-                                        <label for="num-tomyumkung">Quantity:</label>
+                                        <label for="springroll">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="springroll" class="w-100" onchange="checkQuantity(1)"/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(1)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -143,21 +144,19 @@
                         <div class="card-body">
                             <h5 class="card-title">Thai-style Pork BBQ (Moo Ping)</h5>
                             <p class="card-text">Pork shoulder marinated with Thai herbs and coconut milk.</p>
-                            <p>$2.50</p>
+                            <p class = "price">$2.50</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
                                 <form action="post" class="row mt-1 align-items-center">
                                     <div class="col-3   py-2">
-                                        <label for="num-tomyumkung">Quantity:</label>
+                                        <label for="porkBBQ">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="porkBBQ" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(2)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -171,21 +170,19 @@
                         <div class="card-body">
                             <h5 class="card-title">Chicken Satay with Peanut Sauce</h5>
                             <p class="card-text">Marinated with coconut milk and turmeric powder. Served with peanut and pickle sauce.</p>
-                            <p>$3.00</p>
+                            <p class = "price">$3.00</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
                                 <form action="post" class="row mt-1 align-items-center">
                                     <div class="col-3   py-2">
-                                        <label for="num-tomyumkung">Quantity:</label>
+                                        <label for="chickensatay">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="chickensatay" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(3)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -207,7 +204,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Som Tum (Spicy Thai Papaya Salad)</h5>
                             <p class="card-text">Green papaya salad with cherry tomato homemade. Spiced up with Thai herbal dressing and fish sauce.</p>
-                            <p>$9.50</p>
+                            <p class = "price">$9.50</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -216,13 +213,11 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
-                                            Add to Cart</button>
+                                    <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(4)">
+                                        Add to Cart</button>
                                     </div>
                                 </form>
                             </div>
@@ -243,7 +238,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Tom Yum Kung (Thai tom-yum soup with shrimps)</h5>
                             <p class="card-text">Spicy and sour soup with shrimps, mushroom tomato, galangal, kaffir lime leaves, lemongrass, coriander. Spicy. Served with rice</p>
-                            <p>$10.50</p>
+                            <p class = "price">$10.50</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -252,12 +247,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(5)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -271,7 +264,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Tom Kha Kai (Thai herbal coconut soup with chicken)</h5>
                             <p class="card-text">Chicken, lemongrass, Galangal, kaffir lime leaves with coconut milk served with rice.</p>
-                            <p>$8.95</p>
+                            <p class = "price">$8.95</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -280,12 +273,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(6)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -299,7 +290,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Wonton Soup</h5>
                             <p class="card-text">Chicken wonton, bok choy with shrimp tempura ,clear soup.</p>
-                            <p>$3.00</p>
+                            <p class = "price">$3.00</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -308,12 +299,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(7)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -335,7 +324,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Shrimp Pad Thai</h5>
                             <p class="card-text">Thai-style, stirred fried rice noodles with shrimp, tofu, peanuts, bean sprouts. Seasoned with refreshing tamarind sauce</p>
-                            <p>$19.95</p>
+                            <p class = "price">$19.95</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -344,12 +333,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(8)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -363,7 +350,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Chicken Pad Thai                            </h5>
                             <p class="card-text">Thai-style, stirred fried rice noodles with chicken, peanuts, bean sprouts. Seasoned with refreshing tamarind sauce.</p>
-                            <p>$17.95</p>
+                            <p class = "price">$17.95</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -372,12 +359,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(9)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -391,7 +376,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Tofu Pad Thai</h5>
                             <p class="card-text">Thai-style, stirred fried rice noodles with tofu, peanuts, bean sprouts. Seasoned with refreshing tamarind sauce.</p>
-                            <p>$16.5s0</p>
+                            <p class = "price">$16.50</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -400,12 +385,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(10)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -419,7 +402,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Green Curry Chicken (Keaw Wan Gai)</h5>
                             <p class="card-text">Chicken, green curry paste, coconut milk and vegetables. Seasoned with fish sauce and palm sugar. Serves on rice.</p>
-                            <p>$17.95</p>
+                            <p class = "price">$17.95</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -428,12 +411,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(11)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -447,7 +428,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Stir-Fried Pork with Basil (Kra-pao moo Kai Dao)</h5>
                             <p class="card-text">Stir fried pork minced basil with homemade spicy sauce. Served with fried eggs and jasmine rice.</p>
-                            <p>$17.95</p>
+                            <p class = "price">$17.95</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -456,12 +437,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(12)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -475,7 +454,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Thai Fried Rice Shrimp</h5>
                             <p class="card-text">Stir fried Jasmine rice with shrimp, carrot, tomato, onion, and coriander.</p>
-                            <p>$18.95</p>
+                            <p class = "price">$18.95</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -484,12 +463,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(13)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -503,7 +480,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Stir Fried Chicken with Cashew nuts</h5>
                             <p class="card-text">Chicken stir fried with cashews, chili, bell pepper, onion, and green onions served with jasmine rice.</p>
-                            <p>$17.95</p>
+                            <p class = "price">$17.95</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -512,12 +489,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(14)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -539,7 +514,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Thai Mango Sticky Rice</h5>
                             <p class="card-text">Thai-favorite mango sticky rice. Topped with coconut milk.</p>
-                            <p>$9.95</p>
+                            <p class = "price">$9.95</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -548,12 +523,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(15)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -575,7 +548,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Extra Rice</h5>
                             <p class="card-text">Jasmine white rice</p>
-                            <p>$3.00</p>
+                            <p class = "price">$3.00</p>
                         </div>
                         <div class="card-footer">
                             <div class="container">
@@ -584,12 +557,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" id="num-tomyumkung" class="w-100"/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(16)">
                                             Add to Cart</button>
                                     </div>
                                 </form>

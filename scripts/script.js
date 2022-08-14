@@ -131,6 +131,7 @@ function verifyCheckout() {
 
 }
 
+<<<<<<< HEAD
 // Order Summary
 
 // Determine if promo code is legitimate
@@ -247,3 +248,11 @@ function total_with_tax() {
 
 
 
+=======
+
+//after submit checkout form, delete the order array and order total form local storage
+document.getElementById('checkout').addEventListener('submit', ()=>{
+    localStorage.removeItem('orderArrayJSON');
+    localStorage.removeItem('totalOrdered');
+})
+>>>>>>> 7459953d2ed80ff78a94546035244e687c261ba6
