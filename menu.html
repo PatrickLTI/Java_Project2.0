@@ -21,7 +21,7 @@
     <script src="scripts/menu.js" defer></script>
 </head>
 
-<body>
+<body onload="startup()">
     <header class="sticky-md-top pb-4" id="header">
         <div>
             <div class="container">
@@ -56,7 +56,8 @@
                                 <a class="nav-link" href="about_us.html">ABOUT US</a>
                             </li>
                         </ul>
-                         <a class=" icon position-absolute end-0" href="checkout.html"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                        <!-- shopping cart icon linkd to order detail page -->
+                         <a class=" icon position-absolute end-0" href="orderDetails.html"><i class="fas fa-shopping-cart fa-2x" onclick="CalTotalOrdered()"></i></a>
                     </div>
                     </div>
                 </nav>
@@ -106,8 +107,6 @@
             </div>
         </nav>
 
-        <!-- check out button -->
-        <button id="btnCheckOut" onclick="CalTotalOrdered()"><a href="orderDetails.html">check out</a> </button>
 
         <!-- menu for APPERIZERS -->
         <div class="container mb-3 py-3 border-bottom" id="appetizers">
@@ -126,14 +125,12 @@
                                 <form action="post" class="row mt-1 align-items-center">
                                     <div class="col-3   py-2">
                                         <label for="springroll">Quantity:</label>
-                                    </div>num-springroll
+                                    </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="springroll" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="springroll" class="w-100" onchange="checkQuantity(1)"/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(1)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -156,12 +153,10 @@
                                         <label for="porkBBQ">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="porkBBQ" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="porkBBQ" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(2)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -184,12 +179,10 @@
                                         <label for="chickensatay">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="chickensatay" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="chickensatay" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(3)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -220,13 +213,11 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
-                                            Add to Cart</button>
+                                    <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(4)">
+                                        Add to Cart</button>
                                     </div>
                                 </form>
                             </div>
@@ -256,12 +247,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(5)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -284,12 +273,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(6)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -312,12 +299,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(7)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -348,12 +333,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(8)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -376,12 +359,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(9)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -404,12 +385,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(10)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -432,12 +411,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(11)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -460,12 +437,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(12)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -488,12 +463,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(13)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -516,12 +489,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(14)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -552,12 +523,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(15)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
@@ -588,12 +557,10 @@
                                         <label for="num-tomyumkung">Quantity:</label>
                                     </div>
                                     <div class="col-3  ">
-                                        <input type="number" name="quantity"  id="num-tomyumkung" class="w-100 "/>
+                                       <input type="number" name="quantity"  min ="0"  max = "20"  id="num-tomyumkung" class="w-100 "/>
                                     </div>
                                     <div class="col-6 p-2 justify-content-end">
-                                        <button type="button"
-                                            class="btn btn-lg btn-block cart-button "
-                                            style="font-size: 1rem; background: black; color: rgb(255, 255, 255); border: 1px solid black; border-radius: 11px; padding: 10px;">
+                                        <button type="button" class="btn btn-lg btn-block cart-button " onclick="addItem(16)">
                                             Add to Cart</button>
                                     </div>
                                 </form>
