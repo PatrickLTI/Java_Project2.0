@@ -118,7 +118,7 @@ function verifyCheckout() {
     else if (cardHolderFirstName.length === 0) {
         cardFirstNameInput.scrollIntoView();
         cardFirstNameInput.focus();
-        setTimeout(() => alert("Please enter a valid last name"), 1000);
+        setTimeout(() => alert("Please enter a valid First name"), 1000);
         return false
     }
     else if (cardHolderLastName.length === 0 ) {
@@ -130,4 +130,120 @@ function verifyCheckout() {
     return true;
 
 }
+
+// Order Summary
+
+// Determine if promo code is legitimate
+function findArray(arr, target) {
+    const arrayKeys = Object.keys(arr);
+    for (let i = 0; i < arrayKeys.length; i++) {
+        if (target == arrayKeys[i]) {
+            const discount = arr[target] * 100;
+            return document.getElementById("promoField").innerHTML = `-${(discount).toFixed(2)}%`;
+        }
+    }
+    alert("Sorry, invalid promo code, please try again.")
+}
+
+// checks the promotion code entered if it matches what is in the 'database'
+function verifyPromoCode() {
+    //  array of promotion code
+    const promoArray = { "J89Y": 0.05, "VB98": 0.10, "OP89": 0.15 };
+
+    // get value input from client
+    const promoCode = document.getElementById("promo").value;
+
+    // run the verifyPromoCode to determine percent discount
+    findArray(promoArray, promoCode);
+    total_with_tax();
+
+}
+
+// on click of any tip button, will populate tip field with desired tip %
+function tipFunction() {
+    // tip 10%
+    document.getElementById('tip10').addEventListener('click', () => {
+        const subT = 50;
+        document.getElementById("tipField").value = parseFloat((subT * 0.10)).toFixed(2);
+        total_with_tax();
+    });
+    // tip 15%
+    document.getElementById('tip15').addEventListener('click', () => {
+        const subT = 50;
+        document.getElementById("tipField").value = parseFloat((subT * 0.15)).toFixed(2);
+        total_with_tax()
+    });
+    // tip 20%
+    document.getElementById('tip20').addEventListener('click', () => {
+        const subT = 50;
+        document.getElementById("tipField").value = parseFloat((subT * 0.20)).toFixed(2);
+        total_with_tax()
+    });
+
+
+}
+
+// determing the total taxes
+function total_with_tax() {
+    // fixed number for now, will be based on team input
+    let num = 50.03;
+
+    // the subtotal will be calculated by the value taken from Order details, $50 is a place holder for now
+    document.getElementById("subTotal").innerHTML = `$${num}`;
+
+    // tax amount for 5%
+    let taxValue5 = num * 0.05;
+    document.getElementById("taxField").innerHTML = `$${taxValue5.toFixed(2)}`;
+
+    // tax amount for 10%
+    let taxValue10 = num * 0.10;
+    document.getElementById("taxField10").innerHTML = `$${taxValue10.toFixed(2)}`;
+
+    // retrieving the tip amount selected
+    let tipAmount = parseFloat(document.getElementById("tipField").value);
+   
+    // determing the promotion reduction
+    let promoPercent = parseFloat(document.getElementById("promoField").innerHTML);
+    let promoAmount = (promoPercent / 100) * num;
+
+
+    // determining the values that affect the total and calculating the total
+    if (isNaN(tipAmount)) {
+        if (isNaN(promoAmount)) {
+            const total = num + taxValue5 + taxValue10;
+            return document.getElementById('totalField').innerHTML = total.toFixed(2);
+        }
+        else {
+            num = num + promoAmount;
+            taxValue5 = num * 0.05;
+            taxValue10 = num * 0.10;
+            const total = num + taxValue10 + taxValue5;
+            return document.getElementById('totalField').innerHTML = total.toFixed(2);
+        }
+    }
+    else if (tipAmount != NaN) {
+        if (isNaN(promoAmount)) {       
+            const total = num + taxValue10 + taxValue5 + tipAmount;
+            return document.getElementById('totalField').innerHTML = total.toFixed(2);
+        } 
+        else {
+            num = num + promoAmount;
+            taxValue5 = num * 0.05;
+            taxValue10 = num * 0.10;
+            const total = num + taxValue10 + taxValue5 + tipAmount;
+            return document.getElementById('totalField').innerHTML = total.toFixed(2);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
