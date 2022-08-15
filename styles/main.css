@@ -67,3 +67,7 @@ header #backlink {
 #reservation #reservation-content {
   margin: 0 10%;
 }/*# sourceMappingURL=main.css.map */
+
+input:focus {
+  background-color: lightblue;
+}
