@@ -131,7 +131,6 @@ function verifyCheckout() {
 
 }
 
-
 // Order Summary
 
 // Determine if promo code is legitimate
@@ -162,22 +161,21 @@ function verifyPromoCode() {
 
 // on click of any tip button, will populate tip field with desired tip %
 function tipFunction() {
+    subtotalValue = parseFloat(localStorage.getItem('totalOrdered'));
+    let num = subtotalValue;
     // tip 10%
     document.getElementById('tip10').addEventListener('click', () => {
-        const subT = 50;
-        document.getElementById("tipField").value = parseFloat((subT * 0.10)).toFixed(2);
+        document.getElementById("tipField").value = parseFloat((subtotalValue * 0.10)).toFixed(2);
         total_with_tax();
     });
     // tip 15%
     document.getElementById('tip15').addEventListener('click', () => {
-        const subT = 50;
-        document.getElementById("tipField").value = parseFloat((subT * 0.15)).toFixed(2);
+        document.getElementById("tipField").value = parseFloat((subtotalValue * 0.15)).toFixed(2);
         total_with_tax()
     });
     // tip 20%
     document.getElementById('tip20').addEventListener('click', () => {
-        const subT = 50;
-        document.getElementById("tipField").value = parseFloat((subT * 0.20)).toFixed(2);
+        document.getElementById("tipField").value = parseFloat((subtotalValue * 0.20)).toFixed(2);
         total_with_tax()
     });
 
@@ -187,17 +185,18 @@ function tipFunction() {
 // determing the total taxes
 function total_with_tax() {
     // fixed number for now, will be based on team input
-    let num = 50.03;
+    subtotalValue = parseFloat(localStorage.getItem('totalOrdered'));
+    let num = subtotalValue;
 
     // the subtotal will be calculated by the value taken from Order details, $50 is a place holder for now
-    document.getElementById("subTotal").innerHTML = `$${num}`;
+    document.getElementById("subTotal").innerHTML = "$" + subtotalValue.toFixed(2);
 
     // tax amount for 5%
     let taxValue5 = num * 0.05;
     document.getElementById("taxField").innerHTML = `$${taxValue5.toFixed(2)}`;
 
     // tax amount for 10%
-    let taxValue10 = num * 0.10;
+    let taxValue10 = num * 0.09975;
     document.getElementById("taxField10").innerHTML = `$${taxValue10.toFixed(2)}`;
 
     // retrieving the tip amount selected
@@ -248,11 +247,8 @@ function total_with_tax() {
 
 
 
-
-
 //after submit checkout form, delete the order array and order total form local storage
-// document.getElementById('checkout').addEventListener('submit', ()=>{
-//     localStorage.removeItem('orderArrayJSON');
-//     localStorage.removeItem('totalOrdered');
-// })
-
+document.getElementById('checkout').addEventListener('submit', ()=>{
+    localStorage.removeItem('orderArrayJSON');
+    localStorage.removeItem('totalOrdered');
+})

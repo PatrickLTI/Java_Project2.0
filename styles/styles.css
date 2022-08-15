@@ -1,0 +1,61 @@
+/*.background-image{
+    background-image: url(../images/jerome-jome-Ga3ziG9jCno-unsplash.jpg);
+}*/
+
+
+
+/*-----slider-----*/
+
+#showcase{
+  margin-top: 2rem;
+}
+.carousel-item{
+  
+  min-height: 18.75rem;
+  background: no-repeat scroll center scroll;
+  -webkit-background-size: cover;
+  background-size: cover;
+  box-shadow:0rem 0.625rem 0.9375rem #8f4e3c;
+}
+
+.container-fluid{
+  background-repeat: no-repeat;
+  background-size: 100rem 50rem;
+}
+
+/* social media */
+
+
+.tablette{
+  padding: 5rem;
+  background: #ec515f50;
+  margin: 0 auto; /* to make the div center align to the browser */
+    width: 60rem; /* set it to anything */
+    height: 40rem;
+    text-align: center;
+    border-radius: 3rem;
+  box-shadow:0rem 0.625rem 0.9375rem #8f4e3c;
+}
+
+.facebook{
+  border-left:1.25rem solid #000;
+  border-right:1.25rem solid #000;
+  border-top:2.5rem solid #000; 
+  border-bottom:2.5rem solid #000; 
+  border-radius:1.625rem; 
+  box-shadow:0rem 0.625rem 0.9375rem #8f4e3c;
+
+}
+
+h2{
+  font-family: Ubuntu;
+  
+}
+
+
+
+
+
+
+
+
