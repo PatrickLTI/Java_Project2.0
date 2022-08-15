@@ -127,6 +127,7 @@
                     <tr>
                         <td colspan="2">
                             <script>
+                                
                                 function home(){
                                     location.href = "index.html";
                                 }
@@ -141,5 +142,11 @@
                 </tr>
             </table>
         </form>
+        <script>
+            document.getElementById('order').addEventListener('submit', ()=>{
+                                    localStorage.removeItem('orderArrayJSON');
+                                    localStorage.removeItem('totalOrdered');
+                                })
+        </script>
     </body>
 </html>
