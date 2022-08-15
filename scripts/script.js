@@ -37,7 +37,7 @@ function verifyCheckout() {
 
     // regurlar expression to check for visa card numbers
 
-    const regexCreditNum = /^((4\d{3})|(5[1-5]\d{2})|(6011))-?\d{4}-?\d{4}-?\d{4}|3[4,7]\d{13}$/;
+    const regexCreditNum = /(^(4|5)\d{3}-?\d{4}-?\d{4}-?\d{4}|(4|5)\d{15})|(^(6011)-?\d{4}-?\d{4}-?\d{4}|(6011)-?\d{12})|(^((3\d{3}))-\d{6}-\d{5}|^((3\d{14})))/;
     const regexCreditExpiration = /^((0[1-9])|(1[0-2]))\/(\d{2})$/;
     const regexCvc = /^([0-9]{3,4})$/;
 
