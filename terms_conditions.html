@@ -13,7 +13,6 @@
     <!-- Link for icons -->
     <link rel="stylesheet" href="font-awesome/css/all.min.css" />
     <!-- Custom css -->
-    <link rel="stylesheet" href="styles/about_us.css" />
     <link rel="stylesheet" href="styles/main.css" rel="stylesheet" />
 
     <!-- Fonts -->
@@ -26,56 +25,94 @@
 </head>
 
 <body>
-    <header class="sticky-md-top pb-4" id="header">
-        <div style="height: 10vh;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 p-1">
-                        <a href="fr/index.html" class="icon float-end mx-2 ">Fr</a>
-                        <a href="address.html" target="_blank" class=" icon float-end mx-2 "><i
-                                class="fas fa-map-marked-alt fa-lg "></i></a>
-                        <a href="https://www.facebook.com/TissyBistro/" target="_blank" class="icon float-end mx-2"><i
-                                class="fab fa-facebook-square fa-lg"></i></a>
+<!-- Header -->
+<header class="sticky-md-top pb-4" id="header" style="background-color:#ffcbd3b7">
+    <div>
+<!-- Top Banner -->
+        <div width="100%" style="top:0px; background-color:#371e17e4; height: 28px; overflow:hidden;">
+            <a href="address.html" target="_blank" 
+                style="vertical-align: top; margin: 25px; color: #d9d4a6; text-decoration: none; overflow:hidden;
+                padding-left:24.5%;">
+                <i class="fas fa-map-marked-alt fa-lg" style="text-overflow:clip;"></i> 
+                &nbsp;132 Avenue St Louis, Beaconsfield, QC
+            </a>
+            <a href="https://www.facebook.com/TissyBistro/" target="_blank" 
+                style="vertical-align: top; margin: 25px; color: #d9d4a6; text-decoration: none; overflow:hidden;">
+                <i class="fab fa-facebook-square fa-lg" style="overflow:hidden;"></i> 
+                &nbsp;@TissyBistro 
+             </a>  
+             <a href="#header"
+                style="vertical-align: top; margin: 25px; color: #d9d4a6; text-decoration: none; overflow:hidden;">
+                <i class="fas fa-phone" style="overflow:hidden;"></i> 
+                &nbsp;438-725-5512
+             </a>   
+             <a href="#header"
+                style="vertical-align: top; margin: 25px; color: #d9d4a6; text-decoration: none; overflow:hidden;">
+                <i class="fas fa-clock"></i>
+                &nbsp;Opening Hours: 11:00 AM ~ 6:00 PM
+             </a>   
+        </div>
+            <a href="fr/menu.html" 
+                style="color: #d9d4a6; text-decoration: none; font-weight:bold; font-size: larger;
+                position: absolute; right: 0%; top: 0%; margin-top: 0px; vertical-align: top; background-color: #371e17; 
+                padding-right:10px; padding-left: 10px; height: 28px;">
+                Fran&#231;ais
+            </a>
+<!-- Logo and Page Selection -->
+        <div>
+<!-- Logo -->
+            <a class="navbar-brand" href="index.html"><img src="images/logoSmall.png" alt="Tissy's Bistro" height=132px 
+            style="position:absolute; margin-top: 2px; left:0%;"></a>
+            <div style="margin-left: 160px; padding-top:30px; padding-bottom: 25px;">
+<!-- Navigation (Page Selection)-->
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+                style=" border-color:#371e17e4; margin-top: 22px;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <div class="collapse navbar-collapse position-relative" id="navbarNavDropdown">
+                        <ul class="navbar-nav fs-4 fw-bold" style="width:55%; text-align:center; margin-left: -13px;" >
+                            <li class="nav-item" style = "font-size: 75%; padding: 5px; margin: 10px;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            background-color:rgba(255, 255, 255, 0.703); border-radius: 10px;">
+                                <a class="nav-link active" aria-current="page" href="index.html"
+                                style="color:#000000c2" onMouseOver="this.style.color='#888147'" onMouseOut="this.style.color='#000000c2'">HOME</a>
+                            </li>
+                            <li class="nav-item" style = "font-size: 75%; padding: 5px; margin: 10px;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            background-color:rgba(255, 255, 255, 0.703); border-radius: 10px;">
+                                <a class="nav-link" href="menu.html"
+                                style="color:#5d5d5dda" onMouseOver="this.style.color='#371e17e4'" onMouseOut="this.style.color='#5d5d5dda'">MENU</a>
+                            </li>
+                            <li class="nav-item" style = "font-size: 75%; padding: 5px; margin: 10px;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            background-color:rgba(255, 255, 255, 0.703); border-radius: 10px;">
+                                <a class="nav-link" href="reservation.html"
+                                style="color:#5d5d5dda" onMouseOver="this.style.color='#371e17e4'" onMouseOut="this.style.color='#5d5d5dda'">RESERVATION</a>
+                            </li>
+                            
+                            <li class="nav-item" style = "font-size: 75%; padding: 5px; margin: 10px;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            background-color:rgba(255, 255, 255, 0.703); border-radius: 10px;">
+                                <a class="nav-link" href="about_us.html"
+                                style="color:#5d5d5dda" onMouseOver="this.style.color='#371e17e4'" onMouseOut="this.style.color='#5d5d5dda'">ABOUT</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
+                </nav>  
             </div>
-            <div class="container">
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container">
-                        <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="w-100"
-                                alt="logo"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse position-relative" id="navbarNavDropdown">
-                            <ul class="navbar-nav fs-4 fw-bold ">
-                                <li class="nav-item p-1">
-                                    <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-                                </li>
-                                <li class="nav-item p-1">
-                                    <a class="nav-link" href="menu.html">MENU</a>
-                                </li>
-                                <li class="nav-item p-1">
-                                    <a class="nav-link" href="reservation.html">RESERVATION</a>
-                                </li>
-
-                                <li class="nav-item p-1">
-                                    <a class="nav-link" href="about_us.html">ABOUT US</a>
-                                </li>
-                            </ul>
-                            <a class=" icon position-absolute end-0" href="checkout.html"><i
-                                    class="fas fa-shopping-cart fa-2x"></i></a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+            
+<!-- Checkout Icon -->
+<a href="checkout.html"
+style="color: #371e17e4; background-color: rgba(255, 255, 255, 0.703); padding: 24px; border-radius: 10px;
+position: absolute; right: 30px; top:65px;">
+<i class="fas fa-shopping-cart fa-2x"></i>
+</a>             
+            </div>        
         </div>
 
-
-        <!-- back to top -->
-        <a href="#top" id="backlink" class=" icon"><i class="fas fa-angle-double-up fa-3x"></i></a>
+<!-- back to top -->
+        <a href="#top" id="backlink" class=" icon" style="color: #371e17e4;"><i class="fas fa-angle-double-up fa-3x"></i></a>    
     </header>
     <div data-v-54226dd4="" style="min-height: 700px;">
         <section data-v-54226dd4="" class="container">
@@ -113,6 +150,7 @@
                         the Website, the Application and this Agreement regularly to ensure
                         You remain current on the terms and agreements set forth herein.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Purpose</h5>
                     <p data-v-54226dd4="">
                         TaliUp Inc.’s services allow merchants (our “Clients”) to
@@ -137,6 +175,7 @@
                         with any of the terms, you are prohibited from using or accessing
                         the Website or Application.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Clients Products and Services</h5>
                     <p data-v-54226dd4="">
                         You understand that each Client is responsible for the goods and
@@ -152,6 +191,7 @@
                         services offered by a Client, or any Client’s failure to honour any
                         of its offers or warranties.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">License</h5>
                     <p data-v-54226dd4="">
                         TaliUp Inc. hereby grants You a non-transferable, non-exclusive,
@@ -165,6 +205,7 @@
                         transfer any of Your rights hereunder including, without limitation,
                         access to the Application.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Certain Restrictions</h5>
                     <p data-v-54226dd4="">
                         you shall not directly or indirectly copy or reproduce all or any
@@ -212,6 +253,7 @@
                         of action which could subject you to substantial penalties, damages
                         or other relief.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Certain Responsibilities</h5>
                     <p data-v-54226dd4="">
                         You shall be solely responsible for: (i) all Posted Information you
@@ -223,6 +265,7 @@
                         use any such passwords and/or access codes to access the
                         Application.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">TaliUp Inc. Rights</h5>
                     <p data-v-54226dd4="">
                         TaliUp Inc. shall be entitled, at its sole discretion, to suspend,
@@ -234,6 +277,7 @@
                         responsible for the veracity and accuracy of all such data, content
                         and information.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Fees</h5>
                     <p data-v-54226dd4="">
                         TaliUp Inc. may charge additional fees to access and use the
@@ -245,6 +289,7 @@
                         additional equipment (such as tablets) and promotional material
                         (such as tags).
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Term and Termination</h5>
                     <p data-v-54226dd4="">
                         This Agreement shall continue in full force until the earlier to
@@ -273,6 +318,7 @@
                         7, 8, 9, 10, 11, 12, 13, 14 and 15 of this Agreement shall survive
                         any termination of this Agreement.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Intellectual Property</h5>
                     <p data-v-54226dd4=""><strong data-v-54226dd4="">(A) GENERAL OWNERSHIP</strong>
                         All trademarks, patents, copyrights and other intellectual property
@@ -317,6 +363,7 @@
                         within the Website and/or Application, including without limitation
                         adjacent to Your Posted Information.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Confidentiality; Non-Solicitation</h5>
                     <p data-v-54226dd4="">
                         You agree to treat as confidential all confidential information of
@@ -340,6 +387,7 @@
                         employed by or enter into contractual relations with any other
                         individual or entity.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Disclaimers</h5>
                     <p data-v-54226dd4=""><strong data-v-54226dd4="">(A) NO WARRANTIES</strong> <br data-v-54226dd4="">
                         Except as explicitly set forth herein, neither TaliUp Inc., its
@@ -391,6 +439,7 @@
                         CONTINGENCY PLANS TO ACCOUNT FOR SUCH PERIODIC INTERRUPTIONS OR
                         SUSPENSIONS OF THE WEBSITE AND/OR APPLICATION.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Limitation on Liability</h5>
                     <p data-v-54226dd4="">
                         TaliUp Inc. SHALL NOT, UNDER ANY SET OF CIRCUMSTANCES, BE LIABLE TO
@@ -402,12 +451,14 @@
                         TaliUp Inc.’S TOTAL LIABILITY TO YOU FOR ANY CLAIM ARISING HEREUNDER
                         OR RELATED HERETO SHALL NOT EXCEED $50.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Force Majeure</h5>
                     <p data-v-54226dd4="">
                         TaliUp Inc. shall not be liable to You for failure or delay in
                         performing any obligations hereunder if such failure or delay is due
                         to circumstances beyond its reasonable control.
                     </p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">General Terms</h5>
                     <p data-v-54226dd4="">
                         The following terms and conditions govern general use of the
@@ -572,6 +623,7 @@
                     linked website or any service, product or information provided on or
                     through the linked website.
                     <p data-v-54226dd4=""></p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Copyright Infringement</h5>
                     <p data-v-54226dd4="">
                         TaliUp Inc. respects the intellectual property of others, and asks
@@ -629,6 +681,7 @@
                     <br data-v-54226dd4="">
                     By email: info@taliup.ca
                     <p data-v-54226dd4=""></p>
+                    <br>
                     <h5 data-v-54226dd4="" class="color-ale header">Miscellaneous</h5>
                     <p data-v-54226dd4="">
                         Each party shall pay its own costs and expenses in connection with
