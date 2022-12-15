@@ -1,17 +1,23 @@
-// accordion for menu
-var acc = document.getElementsByClassName("accordion");
 
-for (let i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
+//jquery for accordion
+$(document).ready(function(){
+    $(".accordion").click(function(){
+        $(this).next().slideToggle("slow");
+    });
+ });
+
+
+ //jquery input validation for quantity
+ $(document).ready(function(){
+    $('input[type="number"]').change(function(){
+        var reg = /^(?:[0-9]|[1-4][0-9]|50)$/;
+        if (!reg.test($(this).val())){
+            alert("Quantity must be integer between 0 to 50.")
+            $(this).val(0);
+        }
+        
+    });
+ });
 
 
 
@@ -54,6 +60,8 @@ function startup(){
         }
     }
 }
+
+
 
 
 /**
